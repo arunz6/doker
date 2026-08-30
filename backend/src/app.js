@@ -1,16 +1,13 @@
-import express from "express"
+import express from "express";
 
 const app = express();
 
-app.use(express.json);
+app.use(express.json());   // ✅ () add kiya — ye hi bug tha
 
-
-app.get("/", (req,res)=>{
+app.get("/", (req, res) => {
     res.status(200).json({
-        message :"working"
-    })
-})
+        message: "working"
+    });
+});
 
-
-
-export default  app
+export default app;
