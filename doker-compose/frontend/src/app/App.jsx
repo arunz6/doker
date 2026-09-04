@@ -13,7 +13,7 @@ function App() {
     <>
      <div className="flex justify-center h-screen w-screen bg-black items-center h-screen">
       <h1 className="text-3xl font-bold underline text-white">
-       hello
+        {data.message}
       </h1>
     </div>
     </>
