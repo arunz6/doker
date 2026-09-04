@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(morgan("dev"));
 
 
-app.get("/", (req, res) => {
+app.get("/api/user", (req, res) => {
     res.status(200).json({
         message: "api is working"
     });
