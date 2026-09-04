@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState ,useEffect } from 'react'
+import axios from "axios"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState([])
 
+  useEffect(()=>{
+axios.get("")
+  },[])
   return (
  <>
  </>
   )
 }
-
 export default App
