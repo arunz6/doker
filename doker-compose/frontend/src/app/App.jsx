@@ -2,20 +2,21 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const [data, setData] = useState([]);
+ const [data, setData] = useState({});   
 
   useEffect(() => {
-    axios.get("/api/user").then((res) => {
-      setData(res.data);
-    });
+    axios
+      .get("/api/user")
+      .then((res) => setData(res.data))
+      .catch((err) => console.error("Failed to fetch:", err));
   }, []);
   return (
     <>
-     <div className="flex justify-center h-screen w-screen bg-black items-center h-screen">
-      <h1 className="text-3xl font-bold underline text-white">
-        {data.message}
-      </h1>
-    </div>
+      <div className="flex justify-center h-screen w-screen bg-black items-center h-screen">
+        <h1 className="text-3xl font-bold underline text-white">
+          {data.message}
+        </h1>
+      </div>
     </>
   );
 }
